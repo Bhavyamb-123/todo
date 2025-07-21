@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'images/todologo.png' %}" alt="">
+                <h2> ToDo</h2>
+            </div>
+            <div class="navitems">
+                <h2>Home</h2>
+                <h2>Features</h2>
+                <h2>Task</h2>
+                <h2>About</h2>
+            </div>
+            <div class="btns">
+                <button id="b1" >Login</button>
+                <button id="b1" >Signup</button>
+            </div>
+
+        </div>
+        <div class="leftcard">
+        
+        <div class="card-content">
+            <div class="firstcontent">
+            <h3>Integration Tools</h3>
+            <h3>Avg Response Time:</h3>
+            <div class="fast-num">
+                 <h3>365</h3>
+            <button id="fastbtn">fast</button>
+            </div>
+            <div class="speedo">
+                <ion-icon name="speedometer-outline"></ion-icon>
+            </div>
+           
+            </div>
+             <div class="secondcontent">
+            <h3>1,273</h3>
+            <h3>Total Customers</h3>
+            </div>
+            <div class="thridcontent">
+            <h3>828</h3>
+            <h3>Active Customers</h3>
+            </div>
+            <div class="fourthcontent">
+            <h3>$10,928</h3>
+            <h3>Revenue</h3>
+            </div>
+             <div class="fivecontent">
+            <h3>$2,912</h3>
+            <h3>Expense</h3>
+            </div>
+        </div>
+</div>
+    </div>
+
+     <div class="pagelogin" id="log">
+            <div class="login-card">
+                 <div class="card-content">
+                    <h3>Log in</h3>
+                    <h2 id="cls" onclick="closing()">x</h2>
+                    <input type="text" id="logname"   placeholder="Username">
+                    <input type="password" id="logpass"  placeholder="password">
+                    <button  type="submit"id="bt" onclick="log()">submit</button>
+                </div>
+            </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
