@@ -21,14 +21,14 @@
                 <h2>About</h2>
             </div>
             <div class="btns">
-                <button id="b1" >Login</button>
-                <button id="b1" >Signup</button>
+                <button id="b1" type="submit" onclick="login()" >Login</button>
+                <button id="b1" type="submit" onclick="register()" >Signup</button>
             </div>
 
         </div>
         <div class="leftcard">
         
-        <div class="card-content">
+        <div class="card-contentss">
             <div class="firstcontent">
             <h3>Integration Tools</h3>
             <h3>Avg Response Time:</h3>
@@ -59,7 +59,134 @@
             </div>
         </div>
 </div>
+<div class="rightsection">
+  <div class="connect">
+    <h3>Connecting People</h3>
+  </div>
+  <div class="mainhead">
+    <h1>Turn To Dos 
+        <ion-icon name="radio-outline"></ion-icon><br>
+         into Done with<br>
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+        ToDo </h1>
+    <p>Imagine a day where tasks are clear, deadlines are met, and <br>
+        your to-do list works for you, not against you.</p>
+    <div class="btnss">
+      <button id="start-btn">Start for Free →</button>
+      <button id="learn-btn">Learn More →</button>
     </div>
+  </div>
+</div>
+<div class="project-sec">
+    <h3>Project Progress</h3>
+</div>
+<div class="feature-head">
+    <h1>Tools That Work For You</h1>
+    <h2>Not Against You</h2>
+    <h3>Taskly Make Managing Tasks Feel Effortless And Intuitive</h3> 
+</div>
+<div class="row-one">
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+       <ion-icon name="timer-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>collaborate</h3>
+        <h4>Work Together effortlessly in real<br>
+             time</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+<div class="feature-card">
+    <div class="circle">
+        <ion-icon name="analytics-outline"></ion-icon>
+    </div>
+    <div class="feature-content">
+        <h3>Organize</h3>
+        <h4>Arrange tasks by priority and<br>
+             deadlines</h4>
+             <h5>Explore Now →</h5>
+    </div>
+
+</div>
+
+</div>
+    </div>
+    
+    
 
      <div class="pagelogin" id="log">
             <div class="login-card">
@@ -72,8 +199,23 @@
                 </div>
             </div>
             </div>
+            <div class="pagereg" id="signup">
+            <div class="reg-card">
+                <div class="reg-content">
+                    <div class="head-clos">
+                    <h3>Sign up</h3>
+                    <h2 id="\" onclick="rem()">x</h2>
+                    </div>
+                    <input type="text"  id="use" placeholder="Username">
+                    <input type="password" id="pass" placeholder="password">
+                    <input type="password"  id="pwd" placeholder="Confirm password">
+                    <input type="number" id="pinn"    placeholder="Pin">
+                    <button  type="submit"id="bt" onclick="reg()">submit</button>
+                </div>
+            </div>
+        </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+   <script src="{% static 'js/home.js' %}"></script> 
 </body>
 </html>
