@@ -17,7 +17,7 @@
             <div class="navitems">
                 <h2>Home</h2>
                 <h2>Features</h2>
-                <h2>Task</h2>
+               <a href="{% url 'taskpage' %}"><h2>Task</h2></a>
                 <h2>About</h2>
             </div>
             <div class="btns">
@@ -203,14 +203,20 @@
             <div class="reg-card">
                 <div class="reg-content">
                     <div class="head-clos">
-                    <h3>Sign up</h3>
-                    <h2 id="\" onclick="rem()">x</h2>
+                    <h3>Signup</h3>
+                    <h2 id="clos" onclick="rem()">x</h2>
                     </div>
+                    <form action="">
+                    <input type="file"  id="pic" name="profilepic"> 
+                     <input type="text"  id="firstname" name="firstname"  placeholder="firstname">
+                     <input type="text"  id="lasttname" name="lasttname"  placeholder="lastname">
+                     <input type="email"  id="mail" name="email"  placeholder="email">
+                     <input type="tel"  id="num" name="phone"  placeholder="phone_no" maxlength="10" minlength="10">
                     <input type="text"  id="use" placeholder="Username">
                     <input type="password" id="pass" placeholder="password">
-                    <input type="password"  id="pwd" placeholder="Confirm password">
-                    <input type="number" id="pinn"    placeholder="Pin">
+                    
                     <button  type="submit"id="bt" onclick="reg()">submit</button>
+                    </form>
                 </div>
             </div>
         </div>

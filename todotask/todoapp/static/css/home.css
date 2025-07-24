@@ -30,11 +30,13 @@ font-family: Arial, Helvetica, sans-serif;
 }
 .navitems{
     display: flex;
-   margin-right: 10%;
+   align-items: center;
+   justify-content: center;
    gap: 30px;
    h2{
     font-size: 18px;
    }
+
 }
  #b1{
     padding: 6px 14px;
@@ -192,6 +194,7 @@ color: white;
 background-color:  purple;
 outline: none;
 border: none;
+width: 100%;
 }
 .pagereg{
     display: none;
@@ -204,31 +207,38 @@ border: none;
     z-index: 99999;
     backdrop-filter:blur(5px);
     width: 100%;
-    height: 130%;
+    height: 120%;
 }
 .reg-card{
     display: flex;
-    width: 350px;
-    height: 400px;
+    width: 400px;
+    height: 560px;
     border-radius: 20px;
     background-color: rgba(244, 236, 236, 0.84);
     position: relative;
+     animation: popup 0.3s ease-in-out;
     }
-    #reg-cls{
+    #clos{
         position: absolute;
         top: 10px;
         right: 20px;
+        cursor: pointer;
+    }
+    #bt{
+ 
     }
 .reg-content{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     padding: 30px;
     width: 100%;
     h3{
-        margin-left: 40%;
+  
         color: gray;
-        margin-bottom: 5px;
+        margin-bottom: 25px;
     }
     h2{
         color: gray;
@@ -242,8 +252,10 @@ border: none;
         font-size: 16px;
         border: none;
         border-radius: 8px;
-        background: rgb(180, 175, 175);
+        background: white;
         box-shadow: inset 0 2px 4px rgb(0,0,0 0.05);
+        margin-bottom: 3%;
+        width: 90%;
     }
 }
 .reg-contentinput{
@@ -253,6 +265,10 @@ border: none;
     border-radius: 8px;
     background: rgb(180, 175, 175);
     box-shadow: inset 0 2px 4px rgb(0,0,0 0.05);
+}
+.head-clos{
+    display: flex;
+    
 }
 .rightsection{
     margin-left: 55%;
@@ -364,9 +380,9 @@ font-size: 28px;
     background-color: black;
     color: white;
     .circle{
-        background-color: lime;
+        background-color: #85db18;
     }
-    .circle icon{
+    .circle  ion-icon{
         color: black;
     }
 }
@@ -435,4 +451,8 @@ h4{
         opacity: 1;
         transform: scale(1);
     }
+}
+a{
+    text-decoration: none;
+    color: black;
 }
