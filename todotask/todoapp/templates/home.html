@@ -21,10 +21,19 @@
                 <h2>About</h2>
             </div>
             <div class="btns">
-                <button id="b1" type="submit" onclick="login()" >Login</button>
+                 {% if request.user.is_authenticated %}
+             <div class="user-profile" >
+                    <h1><ion-icon name="person-circle-outline"></ion-icon></h1>
+                    <h3>{{request.user}}</h3>
+            
+                </div>
+                <a href="{% url 'logout' %}"><button id="b1" type="button">Logout</button></a>
+                {% else %}
+             <button id="b1" type="submit" onclick="login()" >Login</button></a>
                 <button id="b1" type="submit" onclick="register()" >Signup</button>
+                 {% endif %}
             </div>
-
+   
         </div>
         <div class="leftcard">
         
@@ -190,13 +199,16 @@
 
      <div class="pagelogin" id="log">
             <div class="login-card">
+                <form action="{% url 'pagelogin' %}" method="post">{% csrf_token %}
                  <div class="card-content">
                     <h3>Log in</h3>
                     <h2 id="cls" onclick="closing()">x</h2>
-                    <input type="text" id="logname"   placeholder="Username">
-                    <input type="password" id="logpass"  placeholder="password">
-                    <button  type="submit"id="bt" onclick="log()">submit</button>
+                    <input type="text" id="logname"   placeholder="Username" name="username">
+                    <input type="password" id="logpass"  placeholder="password" name="password">
+                    <button  type="submit"id="bt" >submit</button>
+                    <p>{{msg}}</p>
                 </div>
+                </form>
             </div>
             </div>
             <div class="pagereg" id="signup">
