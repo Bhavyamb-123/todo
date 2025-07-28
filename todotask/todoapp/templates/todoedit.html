@@ -26,10 +26,10 @@
 
         </div>
         <div class="editbackground">
-             <form action="" method="post" class="taskeditform">
+             <form action="{% url 'taskedit' pk=content.pk %}" method="post" class="taskeditform">{% csrf_token %}
                 <h3>Edit Your Task</h3>
-            <input type="text" id="task" name="taskname" placeholder="Enter Your task">
-            <input type="date" id="taskdate" name="taskdate">
+            <input type="text" id="task" name="title" placeholder="Enter Your task"  value="{{content.title}}">
+            <input type="date" id="taskdate" name="deadline"  value="{{content.deadline|date:'Y-m-d'}}">
             <button id="add" type="submit">update</button>
 
         </form>
