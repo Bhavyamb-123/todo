@@ -33,6 +33,7 @@ font-family: Arial, Helvetica, sans-serif;
    align-items: center;
    justify-content: center;
    gap: 30px;
+   
    h2{
     font-size: 18px;
    }
@@ -75,6 +76,7 @@ font-family: Arial, Helvetica, sans-serif;
         padding: 10px;
         border-radius: 8px;
         height: 110px;
+     
     }
     .secondcontent{
         background-color: black;
@@ -82,6 +84,16 @@ font-family: Arial, Helvetica, sans-serif;
         border-radius: 8px;
         margin-left: 20%;
         width: 50%;
+        position: relative;
+         h3{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+    
+
+      }
     }
     .thridcontent{
         background-color:  #f1f5ff;
@@ -89,6 +101,15 @@ font-family: Arial, Helvetica, sans-serif;
         border-radius:8px;
         width: 70%;
         margin-left: 30%;
+          h3{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+    
+
+      }
     }
     .fourthcontent{
         background-color:  #f1f5ff;
@@ -96,6 +117,15 @@ font-family: Arial, Helvetica, sans-serif;
         border-radius:8px;
         width: 50%;
         margin-left: 20%;
+          h3{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+    
+
+      }
     }
     .fivecontent{
          background-color:  #f1f5ff;
@@ -103,12 +133,23 @@ font-family: Arial, Helvetica, sans-serif;
         border-radius:8px;
         width: 70%;
         margin-left: 30%;
+          h3{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+    
+
+      }
     }
    #fastbtn{
        padding:1px 25px;
   border: 2px solid black;
   border-radius: 20px;
-  background-color: rgb(255, 255, 39);
+  background-color: lightgreen;
+  border: none;
+  outline: none;
   color:black;
   font-weight: bold;
   cursor: pointer;
@@ -456,3 +497,38 @@ a{
     text-decoration: none;
     color: black;
 }
+.user-profile{
+    display: flex;
+    gap: 10px;
+    h3{
+        font-size: 18px;
+        margin-top: 6px;
+    }
+}
+.aboutsection{
+    height: 200px;
+    
+    h3{
+        color: #87db18d6;
+        font-size: 28px;
+        margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    }
+    p{
+        margin-top: 4%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        font-size: 20px;
+        font-style: italic;
+        
+    }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+  
