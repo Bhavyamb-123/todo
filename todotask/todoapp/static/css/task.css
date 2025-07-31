@@ -32,6 +32,7 @@ font-family: Arial, Helvetica, sans-serif;
     display: flex;
    justify-content: center;
    align-items: center;
+   cursor: pointer;
    gap: 30px;
    h2{
     font-size: 18px;
@@ -204,4 +205,11 @@ font-family: Arial, Helvetica, sans-serif;
     ion-icon{
         color: white;
     }
+}
+a{
+   text-decoration: none;
+   color: black;
+}
+a:hover{
+   color: purple;
 }

@@ -15,13 +15,13 @@
                 <h2> ToDo</h2>
             </div>
             <div class="navitems">
-                <h2>Home</h2>
+                <a href="{% url 'homepage' %}" ><h2>Home</h2></a>
                 <h2>Features</h2>
-                <h2>Task</h2>
+                <a href="{% url 'addtodo' %}"><h2>Task</h2></a>
                 <h2>About</h2>
             </div>
             <div class="btns">
-                <button id="b1" type="submit" onclick="login()" >Logout</button>
+                <a href="{% url 'logout' %}"><button id="b1" type="submit">Logout</button></a>
             </div>
 
         </div>
@@ -35,5 +35,9 @@
         </form>
         </div>
     </div>
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById("task-date").setAttribute("min", today);
+    </script>
 </body>
 </html>

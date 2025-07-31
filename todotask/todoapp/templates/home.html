@@ -15,20 +15,38 @@
                 <h2> ToDo</h2>
             </div>
             <div class="navitems">
+                {% if request.user.is_authenticated %}
                 <h2>Home</h2>
-                <h2>Features</h2>
+                <a href="#feature"><h2>Features</h2></a>
                <a href="{% url 'addtodo' %}"><h2>Task</h2></a>
                 <a href="#about"><h2>About</h2></a>
+                {% else %}
+                 <h2>Home</h2>
+                <h2>Features</h2>
+                <a href="#about"><h2>About</h2></a>
+                {% endif %}
             </div>
             <div class="btns">
                  {% if request.user.is_authenticated %}
-             <div class="user-profile" >
-                    <h1><ion-icon name="person-circle-outline"></ion-icon></h1>
+                 {% if not request.user.is_superuser%}
+             <div class="user-profile"  onclick="pro()">
+                
+                   <img src="{{prof.image.url}}" alt="" style="width: 40px;height: 40px;border-radius: 100px;object-fit: cover;">
+                    <h3>{{prof.firstname}}</h3>
+            
+               
+                <a href="{% url 'logout' %}"><button id="b1" type="button">Logout</button></a>
+                 </div>
+                 {% else %}
+                 <div class="user-profile">
+                
+                   <h1><ion-icon name="person-circle-outline"></ion-icon></h1>
                     <h3>{{request.user}}</h3>
             
                
                 <a href="{% url 'logout' %}"><button id="b1" type="button">Logout</button></a>
                  </div>
+                 {% endif %}
                 {% else %}
              <button id="b1" type="submit" onclick="login()" >Login</button></a>
                 <button id="b1" type="submit" onclick="register()" >Signup</button>
@@ -90,7 +108,7 @@
 <div class="project-sec">
     <h3>Project Progress</h3>
 </div>
-<div class="feature-head">
+<div class="feature-head" id="feature">
     <h1>Tools That Work For You</h1>
     <h2>Not Against You</h2>
     <h3>Taskly Make Managing Tasks Feel Effortless And Intuitive</h3> 
@@ -213,8 +231,8 @@ interface, it’s perfect for students, professionals, or anyone looking to mana
                  <div class="card-content">
                     <h3>Log in</h3>
                     <h2 id="cls" onclick="closing()">x</h2>
-                    <input type="text" id="logname"   placeholder="Username" name="username">
-                    <input type="password" id="logpass"  placeholder="password" name="password">
+                    <input type="text" id="logname"   placeholder="Username" name="username" required>
+                    <input type="password" id="logpass"  placeholder="password" name="password" required>
                     <button  type="submit"id="bt" >submit</button>
                     <p>{{msg}}</p>
                 </div>
@@ -228,20 +246,42 @@ interface, it’s perfect for students, professionals, or anyone looking to mana
                     <h3>Signup</h3>
                     <h2 id="clos" onclick="rem()">x</h2>
                     </div>
-                    <form action="">
+                    <form action="{% url 'pagereg' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
                     <input type="file"  id="pic" name="image"> 
-                     <input type="text"  id="firstname" name="firstname"  placeholder="firstname">
-                     <input type="text"  id="lasttname" name="lasttname"  placeholder="lastname">
-                     <input type="email"  id="mail" name="email"  placeholder="email">
-                     <input type="tel"  id="num" name="phone"  placeholder="phone_no" maxlength="10" minlength="10">
-                    <input type="text"  id="use" placeholder="Username">
-                    <input type="password" id="pass" placeholder="password">
+                     <input type="text"  id="firstname" name="firstname"  placeholder="firstname" required>
+                     <input type="text"  id="lasttname" name="lastname"  placeholder="lastname" required>
+                     <input type="email"  id="mail" name="email"  placeholder="email" required>
+                     <input type="tel"  id="num" name="num"  placeholder="phone_no" maxlength="10" minlength="10">
+                    <input type="text"  id="use" placeholder="Username" name="username">
+                    <input type="password" id="pass" placeholder="password" name="password">
                     
                     <button  type="submit"id="bt" onclick="reg()">submit</button>
                     </form>
                 </div>
             </div>
         </div>
+
+        <div class="profilerap" id="profrap">
+        <div class="profile-card">
+            <div class="profile-content">
+                {% if prof %}
+                <form action="{% url 'profileedit' pk=prof.pk %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <div class="prof-cls">
+                <h3>Profile</h3>
+                <h2 id="clos" onclick="regcls()">x</h2>
+                </div> 
+                <input type="file" id="propic" name="image"> 
+                 <input type="text" id="firstname" name="firstname"  placeholder="firstname" value="{{prof.firstname}}"> 
+                <input type="text" id="lastname" name="lastname"  placeholder="lastname" value="{{prof.lastname}}">
+                <input type="Email" id="ema" name="email"  placeholder="Email" value="{{prof.email}}">
+                <input type="tel" id="num" name="num"  placeholder="phone_no" maxlength="10" minlength="10" value="{{prof.phone}}">
+                <button type="submit" id="bt">update</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+   
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
    <script src="{% static 'js/home.js' %}"></script> 
