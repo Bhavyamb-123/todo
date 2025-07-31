@@ -8,7 +8,13 @@ from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def homepage(request):
-    return render(request, 'home.html')
+    try:
+        prof =  Profile.objects.get(user = request.user)
+    except:
+        prof =''
+
+
+    return render(request, 'home.html' ,{"prof":prof})
 # def taskpage(request):
 #     return render(request, 'task.html')
 # def todoedit(request):
@@ -24,7 +30,7 @@ def  pagelogin(request):
             print("login successfully")
             return HttpResponseRedirect(reverse("homepage"))
         else:
-            print("User not found")
+            print("User not found") 
             msg="invalid credentials"
         print(username,password)
     return render(request,'home.html', {"msg":msg})
@@ -42,7 +48,7 @@ def pagereg(request):
             user=user,
             firstname=request.POST.get("firstname"),
             lastname=request.POST.get("lastname"),
-            email=request.POST.get("Email"),
+            email=request.POST.get("email"),
             phone=request.POST.get("num"),
             image=request.FILES["image"],
          )
@@ -51,17 +57,17 @@ def pagereg(request):
 
 
 def addtodo(request):
-    # todos=Todo.objects.filter(user=request.user)
-    todos=Todo.objects.all()
+    todos=Todo.objects.filter(user=request.user)
+    # todos=Todo.objects.all()
     if request.method=="POST":
         Todo.objects.create(
             title=request.POST.get("title"),
             deadline=request.POST.get("deadline"),
-            # user=request.user
+            user=request.user
 
         )
         return HttpResponseRedirect(reverse('addtodo'))
-    print(f"todos {todos}")
+    # print(f"todos {todos}")
     return render(request, 'task.html',{'content':todos})
 def todocomplete(request,pk):
     todo=Todo.objects.filter(pk=pk).first()
@@ -91,6 +97,20 @@ def taskdelete(request,pk):
     print(tasks)
     tasks.delete()
     return HttpResponseRedirect(reverse('addtodo'))
+
+def profileedit(request,pk):
+    proedit=Profile.objects.filter(pk=pk).first()
+    if request.method=="POST":
+     proedit.firstname=request.POST.get("firstname")
+     proedit.lastname=request.POST.get("lastname")
+     proedit.email=request.POST.get("email")
+     proedit.phone=request.POST.get("num")
+     if request.FILES.get("image"):
+        proedit.image=request.FILES.get("image")
+    proedit.save()
+    user=request.user
+    return HttpResponseRedirect(reverse('homepage'))
+    return render(request, 'home.html',{'prof':proedit})
 
 
 

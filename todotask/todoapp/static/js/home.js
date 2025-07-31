@@ -10,3 +10,11 @@ function register(){
 function rem(){
     document.getElementById("signup").style.display="";
 }
+function regcls(){
+    document.getElementById("profrap").style.display="";
+}
+function pro(){
+    document.getElementById("profrap").style.display="flex";
+   
+    
+}
